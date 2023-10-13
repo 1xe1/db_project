@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anun</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: montserrat;
+      background: black;
+      color: white;
+    }
+    .center{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .ring{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      animation: ring 2s linear;
+    }
+
+    @keyframes ring{
+      0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+      }
+      50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+      }
+      100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+      }
+    }
+    .ring::before{
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+    }
+    span{
+      counter-reset: #737373;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="ring">
+      <span>Loading....</span>
+    </div>
+  </div>
+</body>
+<script>
+  // รอเวลา 3 วินาที (3000 มิลลิวินาที) แล้วเปลี่ยนเส้นทาง URL
+  setTimeout(function() {
+      window.location.href = "./html/dashboard.php";
+  }, 3000);
+</script>
+</html>
